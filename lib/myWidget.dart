@@ -7,10 +7,20 @@ class MyWidget extends StatefulWidget{
 class MyWidgetState extends State<MyWidget>{
   Widget build(BuildContext context){
     return Container(
-        height: 10,
+        height: 30,
         width: 200,
-        color: Colors.black,
+        color: Colors.yellow,
         child: Text("F"),
       );
+  }
+
+  String shuffleString(String str){
+    var list = str.split('');
+    list.shuffle();
+    str ='';
+    for(var s in list){
+      str+=s;
+    }
+    return str;
   }
 }
