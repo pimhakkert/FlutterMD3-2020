@@ -19,9 +19,24 @@ class MyApp extends StatelessWidget {
           title: Text("Our first App"),
         ),
         body: Center(
-          child: Text("Hello world"),
+          child:Column(children: [
+            buildMyWidget(),
+            buildMyWidget(),
+            buildMyWidget(),
+          ],)
         ),
       ),
+    );
+  }
+
+  Widget buildMyWidget(){
+    return Padding(
+      padding: EdgeInsets.all(2),
+      child: Container(
+        height: 200,
+        width: 200,
+        color: Colors.red,
+      )
     );
   }
 }
