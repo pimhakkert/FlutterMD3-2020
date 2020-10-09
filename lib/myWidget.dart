@@ -5,13 +5,23 @@ class MyWidget extends StatefulWidget{
 }
 
 class MyWidgetState extends State<MyWidget>{
+  var text = "Hallo MD3";
+
   Widget build(BuildContext context){
-    return Container(
+    return GestureDetector(
+      onTap: (){
+        print("Button Pressed");
+        this.setState(() {
+          text = shuffleString(text);
+        });
+      },
+      child: Container(
         height: 30,
         width: 200,
         color: Colors.yellow,
-        child: Text("F"),
-      );
+        child: Text(text),
+      )
+    );
   }
 
   String shuffleString(String str){
