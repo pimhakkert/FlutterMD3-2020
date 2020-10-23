@@ -20,12 +20,19 @@ class MyApp extends StatelessWidget {
           title: Text("Our first App"),
         ),
         body: Center(
-          child:Column(children: [
-            MyWidget(),
-            buildMyWidget("Silvan", 50.0),
-            buildMyWidget("Robin", 60.0),
-            buildMyWidget("Simon", 150.0),
-          ],)
+          child:Container(
+            child:
+              ListView(
+                padding: const EdgeInsets.all(10),
+                scrollDirection: Axis.vertical,
+                children: [
+                  MyWidget(),
+                  MyWidget(),
+                  MyWidget(),
+                ],
+              )
+            ,
+          )
         ),
       ),
     );

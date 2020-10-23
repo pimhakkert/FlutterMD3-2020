@@ -1,36 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:hello_md3/view.dart';
 
-class MyWidget extends StatefulWidget{
-  MyWidgetState createState() => MyWidgetState();
-}
+class MyWidget extends StatelessWidget {
+  Widget build(BuildContext context) {
+    double _currentSliderValue = 20;
 
-class MyWidgetState extends State<MyWidget>{
-  var text = "Hallo MD3";
-
-  Widget build(BuildContext context){
-    return GestureDetector(
-      onTap: (){
-        print("Button Pressed");
-        this.setState(() {
-          text = shuffleString(text);
-        });
-      },
-      child: Container(
-        height: 30,
-        width: 200,
-        color: Colors.yellow,
-        child: Text(text),
-      )
+    return Container(
+      margin: const EdgeInsets.all(5),
+      height: 500,
+      width: 350,
+      color: Colors.grey,
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SecondRoute()),
+          );
+        },
+        child: const Text('Open Page', style: TextStyle(fontSize: 20)),
+      ),
     );
-  }
-
-  String shuffleString(String str){
-    var list = str.split('');
-    list.shuffle();
-    str ='';
-    for(var s in list){
-      str+=s;
-    }
-    return str;
   }
 }
